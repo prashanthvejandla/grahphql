@@ -8,7 +8,7 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.moshopify</groupId>
+	<groupId>live.sumit-gupta</groupId>
 	<artifactId>grahphql-client</artifactId>
 	<version>2024-01</version>
 	<packaging>jar</packaging>
