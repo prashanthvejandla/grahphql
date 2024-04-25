@@ -14,12 +14,12 @@
 	<packaging>jar</packaging>
 	<name>grahphql</name>
 	<description>miniOrange Shopify Plugins</description>
-	<url>https://local.miniorange.in</url>
+	<url>https://github.com/prashanthvejandla/grahphql</url>
 
 	<licenses>
 		<license>
 			<name>MIT License</name>
-			<url>https://local.miniorange.in</url>
+			<url>https://github.com/prashanthvejandla/grahphql/blob/master/LICENSE</url>
 		</license>
 	</licenses>
 	<properties>
