@@ -153,6 +153,7 @@
 						<ARN>java.lang.String</ARN>
 					</typeMapping>
 					<generateClient>true</generateClient>
+					<omitNullInputFields>false</omitNullInputFields>
 					<includeMutations>
 						<param>abandonmentEmailStateUpdate</param>
 						<param>abandonmentUpdateActivitiesDeliveryStatuses</param>
@@ -570,7 +571,7 @@
 						<param>webPixelUpdate</param>
 						<param>webhookSubscriptionCreate</param>
 						<param>webhookSubscriptionDelete</param>
-						<param>webhookSubscriptionUpdate</param>\
+						<param>webhookSubscriptionUpdate</param>
 					</includeMutations>
 					<includeQueries>
 						<param>abandonment</param>
@@ -763,7 +764,7 @@
 						<param>webhookSubscriptions</param>
 					</includeQueries>
 					<maxProjectionDepth>2</maxProjectionDepth>
-					<packageName>com.moshopify.grapqhlclient</packageName>
+					<packageName>com.moshopify.graphql</packageName>
 					<addGeneratedAnnotation>false</addGeneratedAnnotation>
 				</configuration>
 			</plugin>
@@ -804,10 +805,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<quiet>true</quiet>
-					<failOnError>false</failOnError>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
