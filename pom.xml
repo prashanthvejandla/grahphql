@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>live.sumit-gupta</groupId>
-	<artifactId>grahphql-client</artifactId>
-	<version>2024-01-03</version>
+	<artifactId>graphql-client</artifactId>
+	<version>2024-01</version>
 	<packaging>jar</packaging>
 	<name>graphql</name>
 	<description>miniOrange Shopify Plugins</description>
@@ -110,7 +110,7 @@
 			<plugin>
 				<groupId>io.github.deweyjose</groupId>
 				<artifactId>graphqlcodegen-maven-plugin</artifactId>
-				<version>1.23</version>
+				<version>1.60.1</version>
 				<executions>
 					<execution>
 						<goals>
@@ -136,10 +136,10 @@
 						<UtcOffset>java.lang.String</UtcOffset>
 						<ARN>java.lang.String</ARN>
 					</typeMapping>
-					<generateClient>true</generateClient>
-<!--					<generateClientApiV2>true</generateClientApiV2>-->
-<!--					<generateDocs>false</generateDocs>-->
-					<omitNullInputFields>false</omitNullInputFields>
+					<generateClientApiV2>true</generateClientApiV2>
+					<generateDocs>false</generateDocs>
+					<generatedDocsFolder>false</generatedDocsFolder>
+					<onlyGenerateChanged>true</onlyGenerateChanged>
 					<includeMutations>
 						<param>abandonmentEmailStateUpdate</param>
 						<param>abandonmentUpdateActivitiesDeliveryStatuses</param>
@@ -749,7 +749,7 @@
 						<param>webhookSubscription</param>
 						<param>webhookSubscriptions</param>
 					</includeQueries>
-					<maxProjectionDepth>10</maxProjectionDepth>
+					<maxProjectionDepth>5</maxProjectionDepth>
 					<packageName>com.moshopify.graphql</packageName>
 					<addGeneratedAnnotation>false</addGeneratedAnnotation>
 				</configuration>
