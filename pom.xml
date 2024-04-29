@@ -749,7 +749,7 @@
 						<param>webhookSubscription</param>
 						<param>webhookSubscriptions</param>
 					</includeQueries>
-					<maxProjectionDepth>2</maxProjectionDepth>
+					<maxProjectionDepth>10</maxProjectionDepth>
 					<packageName>com.moshopify.graphql</packageName>
 					<addGeneratedAnnotation>false</addGeneratedAnnotation>
 				</configuration>
