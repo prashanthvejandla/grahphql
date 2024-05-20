@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>live.sumit-gupta</groupId>
+	<groupId>live.vejandla</groupId>
 	<artifactId>graphql-client</artifactId>
-	<version>2024-01</version>
+	<version>2024-04</version>
 	<packaging>jar</packaging>
 	<name>graphql</name>
 	<description>miniOrange Shopify Plugins</description>
@@ -46,31 +46,23 @@
 
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-
-		<dependency>
-			<groupId>com.netflix.graphql.dgs.codegen</groupId>
-			<artifactId>graphql-dgs-codegen-client-core</artifactId>
-			<version>5.1.17</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.netflix.graphql.dgs</groupId>
-			<artifactId>graphql-dgs-client</artifactId>
-			<version>5.3.0</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.netflix.graphql.dgs.codegen</groupId>
 			<artifactId>graphql-dgs-codegen-core</artifactId>
-			<version>5.3.1</version>
+			<version>6.1.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.netflix.graphql.dgs.codegen</groupId>
 			<artifactId>graphql-dgs-codegen-shared-core</artifactId>
-			<version>5.3.1</version>
+			<version>6.1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.17.1</version>
 		</dependency>
 
 	</dependencies>
@@ -135,11 +127,13 @@
 						<UnsignedInt64>java.math.BigInteger</UnsignedInt64>
 						<UtcOffset>java.lang.String</UtcOffset>
 						<ARN>java.lang.String</ARN>
+						<Color>java.lang.String</Color>
 					</typeMapping>
 					<generateClientApiV2>true</generateClientApiV2>
 					<generateDocs>false</generateDocs>
 					<generatedDocsFolder>false</generatedDocsFolder>
 					<onlyGenerateChanged>true</onlyGenerateChanged>
+					<generateKotlinNullableClasses>true</generateKotlinNullableClasses>
 					<includeMutations>
 						<param>abandonmentEmailStateUpdate</param>
 						<param>abandonmentUpdateActivitiesDeliveryStatuses</param>
@@ -317,8 +311,6 @@
 						<param>giftCardUpdate</param>
 						<param>inventoryActivate</param>
 						<param>inventoryAdjustQuantities</param>
-						<param>inventoryAdjustQuantity</param>
-						<param>inventoryBulkAdjustQuantityAtLocation</param>
 						<param>inventoryBulkToggleActivation</param>
 						<param>inventoryDeactivate</param>
 						<param>inventoryItemUpdate</param>
@@ -361,6 +353,7 @@
 						<param>metafieldDelete</param>
 						<param>metafieldStorefrontVisibilityCreate</param>
 						<param>metafieldStorefrontVisibilityDelete</param>
+						<param>metafieldsDelete</param>
 						<param>metafieldsSet</param>
 						<param>metaobjectBulkDelete</param>
 						<param>metaobjectCreate</param>
@@ -376,16 +369,20 @@
 						<param>orderCreateMandatePayment</param>
 						<param>orderEditAddCustomItem</param>
 						<param>orderEditAddLineItemDiscount</param>
+						<param>orderEditAddShippingLine</param>
 						<param>orderEditAddVariant</param>
 						<param>orderEditBegin</param>
 						<param>orderEditCommit</param>
 						<param>orderEditRemoveDiscount</param>
 						<param>orderEditRemoveLineItemDiscount</param>
+						<param>orderEditRemoveShippingLine</param>
 						<param>orderEditSetQuantity</param>
 						<param>orderEditUpdateDiscount</param>
+						<param>orderEditUpdateShippingLine</param>
 						<param>orderInvoiceSend</param>
 						<param>orderMarkAsPaid</param>
 						<param>orderOpen</param>
+						<param>orderRiskAssessmentCreate</param>
 						<param>orderUpdate</param>
 						<param>paymentCustomizationActivation</param>
 						<param>paymentCustomizationCreate</param>
@@ -420,7 +417,6 @@
 						<param>productDeleteImages</param>
 						<param>productDeleteMedia</param>
 						<param>productDuplicate</param>
-						<param>productDuplicateAsync</param>
 						<param>productDuplicateAsyncV2</param>
 						<param>productFeedCreate</param>
 						<param>productFeedDelete</param>
@@ -428,9 +424,14 @@
 						<param>productImageUpdate</param>
 						<param>productJoinSellingPlanGroups</param>
 						<param>productLeaveSellingPlanGroups</param>
+						<param>productOptionUpdate</param>
+						<param>productOptionsCreate</param>
+						<param>productOptionsDelete</param>
+						<param>productOptionsReorder</param>
 						<param>productPublish</param>
 						<param>productReorderImages</param>
 						<param>productReorderMedia</param>
+						<param>productSet</param>
 						<param>productUnpublish</param>
 						<param>productUpdate</param>
 						<param>productUpdateMedia</param>
@@ -538,6 +539,7 @@
 						<param>tagsAdd</param>
 						<param>tagsRemove</param>
 						<param>taxAppConfigure</param>
+						<param>transactionVoid</param>
 						<param>translationsRegister</param>
 						<param>translationsRemove</param>
 						<param>urlRedirectBulkDeleteAll</param>
@@ -578,9 +580,12 @@
 						<param>availableLocales</param>
 						<param>carrierService</param>
 						<param>cartTransforms</param>
+						<param>cashTrackingSession</param>
+						<param>cashTrackingSessions</param>
 						<param>catalog</param>
 						<param>catalogOperations</param>
 						<param>catalogs</param>
+						<param>catalogsCount</param>
 						<param>channel</param>
 						<param>channels</param>
 						<param>checkoutBranding</param>
@@ -596,10 +601,10 @@
 						<param>collectionSavedSearches</param>
 						<param>collections</param>
 						<param>companies</param>
+						<param>companiesCount</param>
 						<param>company</param>
 						<param>companyContact</param>
 						<param>companyContactRole</param>
-						<param>companyCount</param>
 						<param>companyLocation</param>
 						<param>companyLocations</param>
 						<param>currentAppInstallation</param>
@@ -618,7 +623,7 @@
 						<param>deliveryProfile</param>
 						<param>deliveryProfiles</param>
 						<param>deliverySettings</param>
-						<param>discountCodeCount</param>
+						<param>discountCodesCount</param>
 						<param>discountNode</param>
 						<param>discountNodes</param>
 						<param>discountRedeemCodeBulkCreation</param>
@@ -680,6 +685,7 @@
 						<param>paymentCustomization</param>
 						<param>paymentCustomizations</param>
 						<param>paymentTermsTemplates</param>
+						<param>pendingOrdersCount</param>
 						<param>priceList</param>
 						<param>priceLists</param>
 						<param>priceRule</param>
@@ -693,14 +699,17 @@
 						<param>productDuplicateJob</param>
 						<param>productFeed</param>
 						<param>productFeeds</param>
+						<param>productOperation</param>
 						<param>productResourceFeedback</param>
 						<param>productSavedSearches</param>
 						<param>productVariant</param>
 						<param>productVariants</param>
 						<param>products</param>
+						<param>productsCount</param>
 						<param>publicApiVersions</param>
 						<param>publication</param>
 						<param>publications</param>
+						<param>publicationsCount</param>
 						<param>refund</param>
 						<param>return</param>
 						<param>returnableFulfillment</param>
@@ -710,12 +719,12 @@
 						<param>scriptTag</param>
 						<param>scriptTags</param>
 						<param>segment</param>
-						<param>segmentCount</param>
 						<param>segmentFilterSuggestions</param>
 						<param>segmentFilters</param>
 						<param>segmentMigrations</param>
 						<param>segmentValueSuggestions</param>
 						<param>segments</param>
+						<param>segmentsCount</param>
 						<param>sellingPlanGroup</param>
 						<param>sellingPlanGroups</param>
 						<param>serverPixel</param>
@@ -735,6 +744,7 @@
 						<param>subscriptionContract</param>
 						<param>subscriptionContracts</param>
 						<param>subscriptionDraft</param>
+						<param>taxonomy</param>
 						<param>tenderTransactions</param>
 						<param>translatableResource</param>
 						<param>translatableResources</param>
@@ -749,7 +759,7 @@
 						<param>webhookSubscription</param>
 						<param>webhookSubscriptions</param>
 					</includeQueries>
-					<maxProjectionDepth>5</maxProjectionDepth>
+					<maxProjectionDepth>10</maxProjectionDepth>
 					<packageName>com.moshopify.graphql</packageName>
 					<addGeneratedAnnotation>false</addGeneratedAnnotation>
 				</configuration>
