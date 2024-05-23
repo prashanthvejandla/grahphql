@@ -5,7 +5,7 @@
 
 	<groupId>live.vejandla</groupId>
 	<artifactId>graphql-client</artifactId>
-	<version>2024-04</version>
+	<version>2024-01</version>
 	<packaging>jar</packaging>
 	<name>graphql</name>
 	<description>miniOrange Shopify Plugins</description>
@@ -112,7 +112,7 @@
 				</executions>
 				<configuration>
 					<schemaPaths>
-						<param>src/main/resources/schema.graphql</param>
+						<param>src/main/resources/admin-schema.graphql</param>
 					</schemaPaths>
 					<typeMapping>
 						<URL>java.lang.String</URL>
@@ -311,6 +311,8 @@
 						<param>giftCardUpdate</param>
 						<param>inventoryActivate</param>
 						<param>inventoryAdjustQuantities</param>
+						<param>inventoryAdjustQuantity</param>
+						<param>inventoryBulkAdjustQuantityAtLocation</param>
 						<param>inventoryBulkToggleActivation</param>
 						<param>inventoryDeactivate</param>
 						<param>inventoryItemUpdate</param>
@@ -353,7 +355,6 @@
 						<param>metafieldDelete</param>
 						<param>metafieldStorefrontVisibilityCreate</param>
 						<param>metafieldStorefrontVisibilityDelete</param>
-						<param>metafieldsDelete</param>
 						<param>metafieldsSet</param>
 						<param>metaobjectBulkDelete</param>
 						<param>metaobjectCreate</param>
@@ -369,20 +370,16 @@
 						<param>orderCreateMandatePayment</param>
 						<param>orderEditAddCustomItem</param>
 						<param>orderEditAddLineItemDiscount</param>
-						<param>orderEditAddShippingLine</param>
 						<param>orderEditAddVariant</param>
 						<param>orderEditBegin</param>
 						<param>orderEditCommit</param>
 						<param>orderEditRemoveDiscount</param>
 						<param>orderEditRemoveLineItemDiscount</param>
-						<param>orderEditRemoveShippingLine</param>
 						<param>orderEditSetQuantity</param>
 						<param>orderEditUpdateDiscount</param>
-						<param>orderEditUpdateShippingLine</param>
 						<param>orderInvoiceSend</param>
 						<param>orderMarkAsPaid</param>
 						<param>orderOpen</param>
-						<param>orderRiskAssessmentCreate</param>
 						<param>orderUpdate</param>
 						<param>paymentCustomizationActivation</param>
 						<param>paymentCustomizationCreate</param>
@@ -417,6 +414,7 @@
 						<param>productDeleteImages</param>
 						<param>productDeleteMedia</param>
 						<param>productDuplicate</param>
+						<param>productDuplicateAsync</param>
 						<param>productDuplicateAsyncV2</param>
 						<param>productFeedCreate</param>
 						<param>productFeedDelete</param>
@@ -424,14 +422,9 @@
 						<param>productImageUpdate</param>
 						<param>productJoinSellingPlanGroups</param>
 						<param>productLeaveSellingPlanGroups</param>
-						<param>productOptionUpdate</param>
-						<param>productOptionsCreate</param>
-						<param>productOptionsDelete</param>
-						<param>productOptionsReorder</param>
 						<param>productPublish</param>
 						<param>productReorderImages</param>
 						<param>productReorderMedia</param>
-						<param>productSet</param>
 						<param>productUnpublish</param>
 						<param>productUpdate</param>
 						<param>productUpdateMedia</param>
@@ -539,7 +532,6 @@
 						<param>tagsAdd</param>
 						<param>tagsRemove</param>
 						<param>taxAppConfigure</param>
-						<param>transactionVoid</param>
 						<param>translationsRegister</param>
 						<param>translationsRemove</param>
 						<param>urlRedirectBulkDeleteAll</param>
@@ -580,12 +572,9 @@
 						<param>availableLocales</param>
 						<param>carrierService</param>
 						<param>cartTransforms</param>
-						<param>cashTrackingSession</param>
-						<param>cashTrackingSessions</param>
 						<param>catalog</param>
 						<param>catalogOperations</param>
 						<param>catalogs</param>
-						<param>catalogsCount</param>
 						<param>channel</param>
 						<param>channels</param>
 						<param>checkoutBranding</param>
@@ -601,10 +590,10 @@
 						<param>collectionSavedSearches</param>
 						<param>collections</param>
 						<param>companies</param>
-						<param>companiesCount</param>
 						<param>company</param>
 						<param>companyContact</param>
 						<param>companyContactRole</param>
+						<param>companyCount</param>
 						<param>companyLocation</param>
 						<param>companyLocations</param>
 						<param>currentAppInstallation</param>
@@ -623,7 +612,7 @@
 						<param>deliveryProfile</param>
 						<param>deliveryProfiles</param>
 						<param>deliverySettings</param>
-						<param>discountCodesCount</param>
+						<param>discountCodeCount</param>
 						<param>discountNode</param>
 						<param>discountNodes</param>
 						<param>discountRedeemCodeBulkCreation</param>
@@ -685,7 +674,6 @@
 						<param>paymentCustomization</param>
 						<param>paymentCustomizations</param>
 						<param>paymentTermsTemplates</param>
-						<param>pendingOrdersCount</param>
 						<param>priceList</param>
 						<param>priceLists</param>
 						<param>priceRule</param>
@@ -699,17 +687,14 @@
 						<param>productDuplicateJob</param>
 						<param>productFeed</param>
 						<param>productFeeds</param>
-						<param>productOperation</param>
 						<param>productResourceFeedback</param>
 						<param>productSavedSearches</param>
 						<param>productVariant</param>
 						<param>productVariants</param>
 						<param>products</param>
-						<param>productsCount</param>
 						<param>publicApiVersions</param>
 						<param>publication</param>
 						<param>publications</param>
-						<param>publicationsCount</param>
 						<param>refund</param>
 						<param>return</param>
 						<param>returnableFulfillment</param>
@@ -719,12 +704,12 @@
 						<param>scriptTag</param>
 						<param>scriptTags</param>
 						<param>segment</param>
+						<param>segmentCount</param>
 						<param>segmentFilterSuggestions</param>
 						<param>segmentFilters</param>
 						<param>segmentMigrations</param>
 						<param>segmentValueSuggestions</param>
 						<param>segments</param>
-						<param>segmentsCount</param>
 						<param>sellingPlanGroup</param>
 						<param>sellingPlanGroups</param>
 						<param>serverPixel</param>
@@ -744,7 +729,6 @@
 						<param>subscriptionContract</param>
 						<param>subscriptionContracts</param>
 						<param>subscriptionDraft</param>
-						<param>taxonomy</param>
 						<param>tenderTransactions</param>
 						<param>translatableResource</param>
 						<param>translatableResources</param>
@@ -764,6 +748,128 @@
 					<addGeneratedAnnotation>false</addGeneratedAnnotation>
 				</configuration>
 			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>io.github.deweyjose</groupId>-->
+<!--				<artifactId>graphqlcodegen-maven-plugin</artifactId>-->
+<!--				<version>1.60.1</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<goals>-->
+<!--							<goal>generate</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<configuration>-->
+<!--					<schemaPaths>-->
+<!--						<param>src/main/resources/storefront-schema.graphql</param>-->
+<!--					</schemaPaths>-->
+<!--					<typeMapping>-->
+<!--						<URL>java.lang.String</URL>-->
+<!--						<Decimal>java.lang.Double</Decimal>-->
+<!--						<Date>java.util.Date</Date>-->
+<!--						<DateTime>java.util.Date</DateTime>-->
+<!--						<FormattedString>java.lang.String</FormattedString>-->
+<!--						<HTML>java.lang.String</HTML>-->
+<!--						<JSON>java.lang.String</JSON>-->
+<!--						<Money>java.lang.Double</Money>-->
+<!--						<StorefrontID>java.lang.String</StorefrontID>-->
+<!--						<UnsignedInt64>java.math.BigInteger</UnsignedInt64>-->
+<!--						<UtcOffset>java.lang.String</UtcOffset>-->
+<!--						<ARN>java.lang.String</ARN>-->
+<!--						<Color>java.lang.String</Color>-->
+<!--					</typeMapping>-->
+<!--					<generateClientApiV2>true</generateClientApiV2>-->
+<!--					<generateDocs>false</generateDocs>-->
+<!--					<generatedDocsFolder>false</generatedDocsFolder>-->
+<!--					<onlyGenerateChanged>true</onlyGenerateChanged>-->
+<!--					<generateKotlinNullableClasses>true</generateKotlinNullableClasses>-->
+<!--					<includeMutations>-->
+<!--						<param>cartAttributesUpdate</param>-->
+<!--						<param>cartBuyerIdentityUpdate</param>-->
+<!--						<param>cartCreate</param>-->
+<!--						<param>cartDiscountCodesUpdate</param>-->
+<!--						<param>cartLinesAdd</param>-->
+<!--						<param>cartLinesRemove</param>-->
+<!--						<param>cartLinesUpdate</param>-->
+<!--						<param>cartMetafieldDelete</param>-->
+<!--						<param>cartMetafieldsSet</param>-->
+<!--						<param>cartNoteUpdate</param>-->
+<!--						<param>cartPaymentUpdate</param>-->
+<!--						<param>cartSelectedDeliveryOptionsUpdate</param>-->
+<!--						<param>cartSubmitForCompletion</param>-->
+<!--						<param>checkoutAttributesUpdateV2</param>-->
+<!--						<param>checkoutCompleteFree</param>-->
+<!--						<param>checkoutCompleteWithCreditCardV2</param>-->
+<!--						<param>checkoutCompleteWithTokenizedPaymentV3</param>-->
+<!--						<param>checkoutCreate</param>-->
+<!--						<param>checkoutCustomerAssociateV2</param>-->
+<!--						<param>checkoutCustomerDisassociateV2</param>-->
+<!--						<param>checkoutDiscountCodeApplyV2</param>-->
+<!--						<param>checkoutDiscountCodeRemove</param>-->
+<!--						<param>checkoutEmailUpdateV2</param>-->
+<!--						<param>checkoutGiftCardRemoveV2</param>-->
+<!--						<param>checkoutGiftCardsAppend</param>-->
+<!--						<param>checkoutLineItemsAdd</param>-->
+<!--						<param>checkoutLineItemsRemove</param>-->
+<!--						<param>checkoutLineItemsReplace</param>-->
+<!--						<param>checkoutLineItemsUpdate</param>-->
+<!--						<param>checkoutShippingAddressUpdateV2</param>-->
+<!--						<param>checkoutShippingLineUpdate</param>-->
+<!--						<param>customerAccessTokenCreate</param>-->
+<!--						<param>customerAccessTokenCreateWithMultipass</param>-->
+<!--						<param>customerAccessTokenDelete</param>-->
+<!--						<param>customerAccessTokenRenew</param>-->
+<!--						<param>customerActivate</param>-->
+<!--						<param>customerActivateByUrl</param>-->
+<!--						<param>customerAddressCreate</param>-->
+<!--						<param>customerAddressDelete</param>-->
+<!--						<param>customerAddressUpdate</param>-->
+<!--						<param>customerCreate</param>-->
+<!--						<param>customerDefaultAddressUpdate</param>-->
+<!--						<param>customerRecover</param>-->
+<!--						<param>customerReset</param>-->
+<!--						<param>customerResetByUrl</param>-->
+<!--						<param>customerUpdate</param>-->
+<!--					</includeMutations>-->
+<!--					<includeQueries>-->
+<!--						<param>article</param>-->
+<!--						<param>articles</param>-->
+<!--						<param>blog</param>-->
+<!--						<param>blogByHandle</param>-->
+<!--						<param>blogs</param>-->
+<!--						<param>cart</param>-->
+<!--						<param>cartCompletionAttempt</param>-->
+<!--						<param>collection</param>-->
+<!--						<param>collectionByHandle</param>-->
+<!--						<param>collections</param>-->
+<!--						<param>customer</param>-->
+<!--						<param>localization</param>-->
+<!--						<param>locations</param>-->
+<!--						<param>menu</param>-->
+<!--						<param>metaobject</param>-->
+<!--						<param>metaobjects</param>-->
+<!--						<param>node</param>-->
+<!--						<param>nodes</param>-->
+<!--						<param>page</param>-->
+<!--						<param>pageByHandle</param>-->
+<!--						<param>pages</param>-->
+<!--						<param>predictiveSearch</param>-->
+<!--						<param>product</param>-->
+<!--						<param>productByHandle</param>-->
+<!--						<param>productRecommendations</param>-->
+<!--						<param>productTags</param>-->
+<!--						<param>productTypes</param>-->
+<!--						<param>products</param>-->
+<!--						<param>publicApiVersions</param>-->
+<!--						<param>search</param>-->
+<!--						<param>shop</param>-->
+<!--						<param>urlRedirects</param>-->
+<!--					</includeQueries>-->
+<!--					<maxProjectionDepth>10</maxProjectionDepth>-->
+<!--					<packageName>com.moshopify.graphql.strorefront</packageName>-->
+<!--					<addGeneratedAnnotation>false</addGeneratedAnnotation>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 <!--			<plugin>-->
 <!--				<groupId>org.sonatype.central</groupId>-->
 <!--				<artifactId>central-publishing-maven-plugin</artifactId>-->
